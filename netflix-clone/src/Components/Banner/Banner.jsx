@@ -8,7 +8,7 @@ export default function Banner() {
   useEffect(() => {
     (async () => {
       try {
-        const request = await instance.get(requests.fetchComedyMovies);
+        const request = await instance.get(requests.fetchNetflixOriginals);
         setMovie(
           request.data.results[
             Math.floor(Math.random() * request.data.results.length)
@@ -42,7 +42,7 @@ export default function Banner() {
           <button className="banner__button play">Play</button>
           <button className="banner__button">My List</button>
         </div>
-        <p className="banner__description">
+        <p style={{color: 'wheat'}}className="banner__description">
           {truncate(movie?.overview, 150)}
         </p>
       </div>
